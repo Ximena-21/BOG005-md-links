@@ -1,7 +1,33 @@
 {
-  "name": "md-links",
+  "name": "md-linksPXAA21",
   "version": "0.1.0",
   "engines": {
     "node": ">=14.x"
-  }
+  },
+  "description": "## Índice",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ximena-21/BOG005-md-links.git"
+  },
+  "keywords": [
+    "md-links",
+    "validate",
+    "links"
+  ],
+  "bin": {
+    "inst": "./cli.js"
+  },
+  "author": "Paula Anzola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ximena-21/BOG005-md-links/issues"
+  },
+  "homepage": "https://github.com/Ximena-21/BOG005-md-links#readme"
 }
