@@ -6,9 +6,9 @@ module.exports = () => {
   //todos los metodos vienen de forma asincrona
 const fs = require('fs')
 
-function readFile (path, cb) {
+function readFile (myPath, cb) {
   //funcion del fs para leer archivos
-  fs.readFile(path, (err, data)=>{
+  fs.readFile(myPath, (err, data)=>{
     console.log(data.toString())
   })
 
@@ -22,25 +22,69 @@ readFile(__dirname + '/archivo.md')
 
 // .............. validar ruta de archivo absoluta o relativa ............
 
+//validar si la ruta es absoluta?, 
+//path.isAbsolute()método determina si path es una ruta absoluta.
+//devuelve un true si es absolute
 const path = require('path')
 
+function pathIsAbsolute (myPath) {
+  if(path.isAbsolute(myPath)) {
+    console.log('es absoluta',myPath)
+  }else {
+    //si no lo es convertirla a absoluta con el .resolve
+    console.log('la ruta no es ab soluta, se tiene qeu convertir')
+    const absolutePath = path.resolve(myPath)
+    console.log('ruta convertida',absolutePath)
 
+    //leer la extension de un archivo apartir de su ruta .extname
+    const extPath = path.extname(absolutePath)
+    console.log(extPath)
+  }
 
-//validar si la ruta es absoluta?, 
-  //path.isAbsolute()método determina si path es una ruta absoluta.
-  //devuelve un true si es absolute
-if(path.isAbsolute(path)) {
-  //...
+  
 }
 
-//si no lo es convertirla a absoluta con el .resolve
-const absolutePath = path.resolve('relative path')
+pathIsAbsolute('archivo.md')
+
+
+//como saber si la ruta es de un dietorio
+  //metodo stats.isDirectory(), devuelve un booleano
+
+const fs = require('fs')
+
+function isDirectory (myPath){
+  fs.stat(myPath, (err,stats) => {
+    console.log(stats.isDirectory())
+  })
+
+  fs.stat(myPath, (err,stats) => {
+    if(err) throw err
+    
+    if (stats.isDirectory()) {
+      console.log("es una carpeta");
+    } else {
+        console.log("es un archivo");
+    }
+  })
+
+}
+
+isDirectory('archivo.md')
+isDirectory('carpetaPrueba')
 
 
 
 
 
-//leer la extension de un archivo apartir de su ruta .extname
+
+
+
+
+
+
+
+
+
 
 
 
