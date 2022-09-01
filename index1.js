@@ -19,21 +19,21 @@
   function pathIsAbsolute (myPath) {
 
     if (path.isAbsolute(myPath)) {
-      console.log('es absoluta',myPath)
+      // console.log('es absoluta',myPath)
       return myPath
     } else {
       //si no lo es convertirla a absoluta con el .resolve
       // console.log('la ruta no es ab soluta, se tiene qeu convertir')
       const pathAbsolute = path.resolve(myPath)
-      console.log(pathAbsolute)
+      // console.log(pathAbsolute)
       return pathAbsolute
     /*   //leer la extension de un archivo apartir de su ruta .extname
       const extPath = path.extname(absolutePath)
       console.log(extPath) */
     }
   }
-  pathIsAbsolute('/home/ximena21/programming/BOG005-md-links/archivo.md')
-  pathIsAbsolute('carpetaPrueba')
+  // pathIsAbsolute('/home/ximena21/programming/BOG005-md-links/archivo.md')
+  // pathIsAbsolute('carpetaPrueba')
 
 
 
@@ -66,9 +66,9 @@ const fileMd =  (myPath) => path.extname(myPath) === '.md' ? myPath : console.lo
           return myPath
         } else {
 
-            console.log({
-              EsDirectorio: stats.isDirectory() + ' Es un archivo'
-            })
+            // console.log({
+            //   EsDirectorio: stats.isDirectory() + ' Es un archivo'
+            // })
         }
       })
     
@@ -77,21 +77,25 @@ const fileMd =  (myPath) => path.extname(myPath) === '.md' ? myPath : console.lo
     isDirectory('archivo.md')
     // isDirectory('carpetaPrueba')
   
-console.log({
-  EsDirectorio: fs.statSync('archivo.md').isDirectory()
-})
+// console.log({
+//   EsDirectorio: fs.statSync('archivo.md').isDirectory()
+// })
 
 //................. leer un directorio ...............
-readDir('/home/ximena21/programming/BOG005-md-links/carpetaPrueba')
+
+//coivbierto la ruta en absoluta
+const pathAbs = pathIsAbsolute('carpetaPrueba')
+
+
 function readDir (dir) {
 
   //fs.readdirSync es el metodo para leer el contenido de un directorio sincronicamente
   let directory = fs.readdirSync(dir)//devuelve una matriz con los nombres de los archivos
 
-  console.log({
-    directory: directory,
-    largo: directory.length
-  })
+  // console.log({
+  //   directory: directory,
+  //   largo: directory.length
+  // })
 
   //filtrar solo los archivos md
 
@@ -102,28 +106,88 @@ function readDir (dir) {
   // })
 }
 
-
-
-
 //............. leer archivo ................
 
 function readFile (pathFile) {
   return new Promise((resolve, reject) => {
     fs.readFile(pathFile, "UTF-8", (error, file) => {
       if (error) {
-        reject(console.log(error)) 
+        // reject(console.log(error)) 
+        resolve({error: error})
       }
-      resolve(console.log(file));
-    });
-  });
+      // resolve(console.log(file))
+      resolve(console.log({succes: file}))
+    })
+  })
 }
 
+// readFile('/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otroArchivo.md')
 
-readFile('/home/ximena21/programming/BOG005-md-links/archivo.md')
+const arrayFilesMd = readDir(pathAbs)
+//readDir('/home/ximena21/programming/BOG005-md-links/carpetaPrueba')
+// console.log('arrayFilesMd',arrayFilesMd)
 
+// const arrayFilesMdAbsolute = arrayFilesMd.map((path) => pathIsAbsolute (path))
+
+// console.log(arrayFilesMdAbsolute)
+
+const arrayPromesas = arrayFilesMd.map((pathFile) => {
+  //path.join metodo que devuelve una cadena de la ruta unida
+  const myPath = path.join(pathAbs,pathFile)
+  // console.log('imprimo cada ruta absoluta para cada archivo',myPath)
+  readFile(myPath)
+})
+
+// Promise.all(arrayPromesas).then((arrayRespuestas)=>{
+//   console.log({Respuesta: arrayRespuestas})
+// })
+
+// readFile('/home/ximena21/programming/BOG005-md-links/archivo.md')
+
+
+
+
+// fs asyncrono
+/* 
+const fsa = require('fs/promises')
+
+fsa.readFile(file,'utf-8')
+.then((texto)=>{
+  console.log(texto)
+})
+.catch((error)=>{
+  console.log(error)
+})
+
+
+const arrayFilesMd = readDir('/home/ximena21/programming/BOG005-md-links/carpetaPrueba')
+
+arrayFilesMd.forEach((file)=>{
+  console.log(file)
+  fsa.readFile(file,'utf-8')
+  .then((texto)=>{
+    console.log(texto)
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+}) */
 
 
 //............... Obtener Links ..............
+
+function getLinks (arrayFilesRead) {
+  return new Promise((resolve, reject) => {
+    let arrLinks = []
+    arrayFilesRead.forEach((md) => {
+      getObjects(md)
+        .then((resp) => {
+          arrLinks.push(resp)
+          resolve(arrLinks.flat())
+        })
+    })
+  })
+}
 
 
 
