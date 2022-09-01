@@ -1,90 +1,64 @@
-module.exports = () => {
-  // ...
-};
-
-//traer modulo de fs, con el require.js , instalado por defecto
-  //todos los metodos vienen de forma asincrona
 const fs = require('fs')
-
-function readFile (myPath, cb) {
-  //funcion del fs para leer archivos
-  fs.readFile(myPath, (err, data)=>{
-    console.log(data.toString())
-  })
-
-
-}
-
-//dirname para decrile que el archivo lo tenemos en el directorio
-readFile(__dirname + '/archivo.md')
-
-
-
-// .............. validar ruta de archivo absoluta o relativa ............
-
-//validar si la ruta es absoluta?, 
-//path.isAbsolute()método determina si path es una ruta absoluta.
-//devuelve un true si es absolute
 const path = require('path')
 
-function pathIsAbsolute (myPath) {
-  if(path.isAbsolute(myPath)) {
-    console.log('es absoluta',myPath)
-  }else {
-    //si no lo es convertirla a absoluta con el .resolve
-    console.log('la ruta no es ab soluta, se tiene qeu convertir')
-    const absolutePath = path.resolve(myPath)
-    console.log('ruta convertida',absolutePath)
-
-    //leer la extension de un archivo apartir de su ruta .extname
-    const extPath = path.extname(absolutePath)
-    console.log(extPath)
-  }
-
-  
-}
-
-pathIsAbsolute('archivo.md')
-
-
-//como saber si la ruta es de un dietorio
-  //metodo stats.isDirectory(), devuelve un booleano
-
-const fs = require('fs')
-
-function isDirectory (myPath){
-  fs.stat(myPath, (err,stats) => {
-    console.log(stats.isDirectory())
-  })
-
-  fs.stat(myPath, (err,stats) => {
-    if(err) throw err
-    
-    if (stats.isDirectory()) {
-      console.log("es una carpeta");
-    } else {
-        console.log("es un archivo");
+function pathAbsolute (route) {
+    if(!path.isAbsolute(route)){
+        console.log({rutaAbsolut: path.resolve(route)})
+        return path.resolve(route)
     }
-  })
-
+    console.log('es absoluta',route)
+    return route
 }
 
-isDirectory('archivo.md')
-isDirectory('carpetaPrueba')
 
+getFileMd('carpetaPrueba')
+// getFileMd('archivo.md')
 
+function getFileMd (inputPath) {
 
+    const routeAbsolut = pathAbsolute(inputPath)
 
+    console.log('routeAbsolute',routeAbsolut)
 
+    //exite?
+    if (fs.existsSync(routeAbsolut)) {
+        console.log('la ruta dada', routeAbsolut + ' es valida')
+        // console.log('es un archivo md',!path.extname(routeAbsolut) === '.md')
+        //si no tiene extension md
+        if ((path.extname(routeAbsolut) === '.md') === false) {
+            //es un directorio ?
+            if (fs.statSync(routeAbsolut).isDirectory()) {
+                console.log('es un directorio',fs.statSync(routeAbsolut).isDirectory())
+                //tiene archivos?
+                if (fs.readdirSync(routeAbsolut).length > 0) {
+                    console.log('TIENE ARCHIVOS')
+                    // filtre los md
+                    console.log(filterFileMd(fs.readdirSync(routeAbsolut)))
+                    return filterFileMd(fs.readdirSync(routeAbsolut))
+                        // los lea
+                    
+                } else {
+                    console.log('Carpeta vacia')
+                }
+            }
+        } else {
+            //leer archivo md
+            console.log('es un archivo md')
+            
+        }
+        
+    } else {
+        console.log('Por favor ingrese una ruta valida')
+    }
+} 
 
+function filterFileMd (matriz) {
+  
+    let filesMd =  matriz.filter(file => path.extname(file) === '.md')
+   
+    return filesMd
 
-
-
-
-
-
-
-
+}
 
 
 

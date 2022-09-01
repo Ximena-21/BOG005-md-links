@@ -1,6 +1,6 @@
 //.....................  callbacks ...........
     //forma mas comun de controlar la asincronia en js
-    //al arrayP se le añade el data, que viene en el argumento 
+    //al array se le añade el data, que viene en el argumento 
     //y cuando ternmine de ejecutar esto llama a la funcion callback 
     // que recibe un parametro (array modificado)
 
@@ -92,11 +92,11 @@ addToArrayP(4, arrayP)
 
  
   
-  addToArrayP(4, arrayp)
+/*   addToArrayP(4, arrayp)
   .then(function () {
     return addToArrayP(5, arrayp);
   })
   .then(function () {
     return addToArrayP(6, arrayp);
   })
-  .catch(err => console.log(err.message))
+  .catch(err => console.log(err.message)) */
