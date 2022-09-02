@@ -123,6 +123,7 @@ function readFile (pathFile) {
 
 // readFile('/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otroArchivo.md')
 
+  //descomentar
 const arrayFilesMd = readDir(pathAbs)
 //readDir('/home/ximena21/programming/BOG005-md-links/carpetaPrueba')
 // console.log('arrayFilesMd',arrayFilesMd)
@@ -131,16 +132,22 @@ const arrayFilesMd = readDir(pathAbs)
 
 // console.log(arrayFilesMdAbsolute)
 
-const arrayPromesas = arrayFilesMd.map((pathFile) => {
+  //descomentar
+/*   let arrayPromesas = []
+
+arrayFilesMd.map((pathFile) => {
   //path.join metodo que devuelve una cadena de la ruta unida
   const myPath = path.join(pathAbs,pathFile)
-  // console.log('imprimo cada ruta absoluta para cada archivo',myPath)
-  readFile(myPath)
+  arrayPromesas.push(myPath)
+  console.log('imprimo cada ruta absoluta para cada archivo',myPath)
+  // readFile(myPath)
 })
 
-// Promise.all(arrayPromesas).then((arrayRespuestas)=>{
-//   console.log({Respuesta: arrayRespuestas})
-// })
+console.log(arrayPromesas)
+
+Promise.all(arrayPromesas).then((arrayRespuestas)=>{
+  console.log({Respuesta: arrayRespuestas})
+}) */
 
 // readFile('/home/ximena21/programming/BOG005-md-links/archivo.md')
 
@@ -190,7 +197,38 @@ function getLinks (arrayFilesRead) {
 }
 
 
+// ........... RECRSIVIDAD PARA VALIDAR LO QE HAY POR DENTRO DE LA CARPETA..........
 
+isDir(pathAbs)
+function isDir (route) {
+  //verificar si es un directorio y si lo es lo lea, y luego verifique
+    //cada ruta si es un directorio y si es un directorio lo lea osea repita fx
+  let  arrayReadDir = []
+  if (fs.statSync(route).isDirectory()){
+
+    const dirRead = fs.readdirSync(route)
+    console.log('lectura de la carpeta', dirRead)
+    if(dirRead.length > 0) {
+      dirRead.forEach((element)=>{
+        arrayReadDir.push(element)
+      })
+
+    arrayReadDir.map((file)=>{
+      console.log('contenido de la subcarpeta', file)
+      isDir(pathIsAbsolute(path.join(route,file)))
+    })
+      // arrayReadDir.push(dirRead)
+      /* dirRead.forEach((element)=>{
+        console.log(element)
+        readDir(element)
+      }) */
+    } else {
+      console.log('la carpeta esta vacia')
+    }
+  }
+
+  console.log(arrayReadDir)
+}
 
 module.exports = () => {
   // ...

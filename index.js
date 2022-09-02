@@ -36,13 +36,19 @@ function getFileMd (inputPath) {
                     console.log(filterFileMd(fs.readdirSync(routeAbsolut)))
                     const arrayFilesMd = filterFileMd(fs.readdirSync(routeAbsolut))
                         // los lea
-                    // let arrayReadFiles = []
+                    let arrayReadFiles = []
                     arrayFilesMd.map((pathFile) => {
                         //path.join metodo que devuelve una cadena de la ruta unida
                         const myPath = path.join(routeAbsolut,pathFile)
                         // console.log('imprimo cada ruta absoluta para cada archivo',myPath)
-                        // arrayReadFiles.push(readFile(myPath)) 
-                        console.log('lectura con ReadFile',readFile(myPath))
+                        arrayReadFiles.push(myPath) 
+                        console.log('imprimo cada ruta absoluta para cada archivo',myPath)
+                        readFile(myPath)
+                        // console.log('lectura con ReadFile',readFile(myPath))
+                    })
+
+                    Promise.all(arrayReadFiles).then((arrayRespuestas)=>{
+                        console.log({Respuesta: arrayRespuestas})
                     })
 
                     // console.log({
@@ -86,5 +92,16 @@ function readFile (pathFile) {
     })
   }
 
+
+
+  function readDir (dir) {
+
+    let directory = fs.readdirSync(dir)//devuelve una matriz con los nombres de los archivos
+  
+     
+    let filesMd =  directory.filter(file => path.extname(file) === '.md')
+   
+    return filesMd
+  }
 
 
