@@ -5,7 +5,9 @@ import { validateLink, statsLinks, statsValidatelinks } from "./src/validateLink
 
 //fx lee todos los archivos de una matriz, usando readFile()
     //devuelve en una matriz, los archivos leidos
-function mdLinks(usrPath,option) {
+//en mdLinks solo se debe pasar la ruta y validate
+//en cli si se pasa el stats
+    function mdLinks(usrPath,option) {
 
     //obtener archivos md
     const arrFilesMd = getFiles(usrPath)
@@ -41,7 +43,7 @@ function mdLinks(usrPath,option) {
     // console.log(arrayLinks)
 }
 
-mdLinks('archivo.md', {stats:true, validate:false})
+mdLinks('carpetaPrueba', {validate:true})
 
 
 

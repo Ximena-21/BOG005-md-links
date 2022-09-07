@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
-// const funciones = require('./index')
-import { temporal, getFiles } from "./index";
+import { mdLinks } from "./index.js"
 
-temporal()
+
+mdLinks()
 
