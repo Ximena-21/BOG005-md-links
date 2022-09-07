@@ -3,34 +3,25 @@ import { getLinks } from "./src/getObjectLinks.js"
 import { readFile } from "./src/readFileMd.js"
 import { validateLink, statsLinks, statsValidatelinks } from "./src/validateLinks.js"
 
-//fx lee todos los archivos de una matriz, usando readFile()
-    //devuelve en una matriz, los archivos leidos
+
 function mdLinks(usrPath,option) {
 
-    //obtener archivos md
     const arrFilesMd = getFiles(usrPath)
-    //leer cada archivo 
+    
     const arrayPromises = arrFilesMd.map((file) => readFile(file))
 
-    //devuelve un promise.all para que espere a que todas las promesas se obtengan
+    //espere todas las promesas
     const arrayLinks = Promise.all(arrayPromises)
     .then((arrayAnswers) => {
-        return getLinks(arrayAnswers) //obtener {c/link} de archivos md
-        // console.log('error debe enviar una opcion valida')
+        return getLinks(arrayAnswers) 
     })
     .then((arrObjectLinks)=>{
-        if (option.validate === false || option.stats === false){
+        if (option.validate === false ){
             console.log(arrObjectLinks)
             return arrObjectLinks
         }
-        if (option.stats === true && option.validate === true){
-            return statsValidatelinks(arrObjectLinks)
-        }
         if (option.validate === true) {
             return validateLink(arrObjectLinks)
-        }
-        if(option.stats === true){
-           return statsLinks(arrObjectLinks)
         }
         console.log('envia una opcion valida')
     })
@@ -41,7 +32,7 @@ function mdLinks(usrPath,option) {
     // console.log(arrayLinks)
 }
 
-mdLinks('carpetaPrueba', {stats:true, validate:false})
+mdLinks('carpetaPrueba', {validate:true})
 
 
 

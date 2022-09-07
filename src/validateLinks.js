@@ -1,18 +1,14 @@
 import fetch from 'node-fetch'
 
 
-//fx() , que hace la petiicion asincrona mediante la API fetch, la cual hace la peticion 
-    //usando promesas
+//peticiones con fetch
 function validateLink(matrizObjectLinks) {
-    // console.log(matrizObjectLinks)
+
     const validate = matrizObjectLinks.map((objectLink) => {
-        // se le pasa la url a fetch, el cual se retorna ya que es una promesa 
-            //es aceptada cuando haya rta y rechazada por un fallo de red o si 
-            //no se completa la peticion
+ 
         return fetch(objectLink.href)
             .then((response) => {
-                //la resuesta que nos devuelve la peticion contiene unas propiedades 
-                //que nos trae informaciond de la feticion 
+  
                 if (response.status >= 200 && response.status <= 399) {
 
                     objectLink.status = response.status,
@@ -31,7 +27,6 @@ function validateLink(matrizObjectLinks) {
             })
             .catch((error) => console.log(error))
     })
-    console.log(Promise.all(validate))
     return Promise.all(validate)
 }
 
@@ -63,6 +58,21 @@ function statsValidatelinks (links) {
         Broken: failes
     }
 }
+
+//para que de una ves me trajera la estadistica pero esto toca usarlo en el CLI
+// if (option.validate === false || option.stats === false){
+//     console.log(arrObjectLinks)
+//     return arrObjectLinks
+// }
+// if (option.stats === true && option.validate === true){
+//     return statsValidatelinks(arrObjectLinks)
+// }
+// if (option.validate === true) {
+//     return validateLink(arrObjectLinks)
+// }
+// if(option.stats === true){
+//    return statsLinks(arrObjectLinks)
+// }
 
 export {
     validateLink,
