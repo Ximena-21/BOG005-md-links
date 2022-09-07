@@ -1,34 +1,5 @@
 import fetch from 'node-fetch'
 
-const mtizPrueba = [
-    {
-        href: 'https://nodejs.org/es/',
-        text: '[Node.js]',
-        file: '/home/ximena21/programming/BOG005-md-linkscarpetaPrueba/cualquierFile.md'
-    },
-    {
-        href: 'https://nodejs.org/es/',
-        text: '[Node.js]',
-        file: '/home/ximena21/programming/BOG005-md-links/carpetaPrueba/cualquierFile.md'
-    },
-    {
-        href: 'https://nodejs.org/es/',
-        text: '[Node.js]',
-        file: '/home/ximena21/programming/BOG005-md-links/carpetaPrueba/cualquierFile.md'
-    },
-    {
-        href: 'https://nodejs.org/es/',
-        text: '[Node.js]',
-        file: '/home/ximena21/programming/BOG005-md-linkscarpetaPrueba/cualquierFile.md'
-    },
-    {
-        href: 'https://developer.mozilla.org/es/docsWeb/JavaScript/Reference/Global_Objects/Array/Reduce',
-        text: '[Array.prototype.reduce() - MDN]',
-        file: '/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otroArchivo.md'
-    }
-]
-
-// validateLink(mtizPrueba)
 
 //fx() , que hace la petiicion asincrona mediante la API fetch, la cual hace la peticion 
     //usando promesas
@@ -64,36 +35,6 @@ function validateLink(matrizObjectLinks) {
     return Promise.all(validate)
 }
 
-// const links = [
-//       {
-//         href: 'https://curriculum.laboratoria.la/es/topics/javascript/04-arrays',
-//         text: '[Arreglos]',
-//         file: '/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otroArchivo.md',
-//         status: 200,
-//         ok: '✅'
-//       },
-//       {
-//         href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/',
-//         text: '[Array - MDN]',
-//         file: '/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otroArchivo.md',
-//         status: 404,
-//         ok: '🚫'
-//       },
-//       {
-//         href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort',
-//         text: '[Array.prototype.sort() - MDN]',
-//         file: '/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otroArchivo.md',
-//         status: 200,
-//         ok: '✅'
-//       },
-//       {
-//         href: 'https://developer.mozilla.org/es/docsWeb/JavaScript/Reference/Global_Objects/Array/Reduce',
-//         text: '[Array.prototype.reduce() - MDN]',
-//         file: '/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otroArchivo.md',
-//         status: 404,
-//         ok: '🚫'
-//       },
-// ]
 
 function statsLinks (links) {
     console.log({
