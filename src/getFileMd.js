@@ -72,6 +72,7 @@ function getFiles(route) {
 
                 //al final de hacer todas las evaluaciones
                 // retorna  la matriz que va a contener solo los archivos md
+                console.log('array archivos md', arrayReadDir)
                 return arrayReadDir
 
             }

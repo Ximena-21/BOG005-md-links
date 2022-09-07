@@ -41,7 +41,7 @@ function mdLinks(usrPath,option) {
     // console.log(arrayLinks)
 }
 
-mdLinks('archivo.md', {stats:true, validate:false})
+mdLinks('carpetaPrueba', {stats:true, validate:false})
 
 
 

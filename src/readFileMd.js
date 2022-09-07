@@ -10,6 +10,10 @@ function readFile(pathFile) {
                 // reject(console.log(error)) 
                 resolve({error: error})
             }
+            console.log({
+                data: dataFile,
+                path: pathFile
+            })
             resolve({
                 data: dataFile,
                 path: pathFile
