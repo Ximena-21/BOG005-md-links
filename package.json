@@ -24,7 +24,7 @@
     "links"
   ],
   "bin": {
-    "ximena": "./cli.js"
+    "md-links": "./cli.js"
   },
   "author": "Paula Anzola",
   "license": "ISC",
