@@ -6,6 +6,7 @@
   },
   "description": "## Índice",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "test": "test"
   },
@@ -23,12 +24,15 @@
     "links"
   ],
   "bin": {
-    "inst": "./cli.js"
+    "ximena": "./cli.js"
   },
   "author": "Paula Anzola",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ximena-21/BOG005-md-links/issues"
   },
-  "homepage": "https://github.com/Ximena-21/BOG005-md-links#readme"
+  "homepage": "https://github.com/Ximena-21/BOG005-md-links#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
 }
