@@ -1,7 +1,6 @@
 import { getFiles } from "./src/getFileMd.js"
 import { getLinks } from "./src/getObjectLinks.js"
 import { readFile } from "./src/readFileMd.js"
-import { validateLink, statsLinks, statsValidatelinks } from "./src/validateLinks.js"
 
 
 function mdLinks(usrPath,option) {
@@ -13,6 +12,7 @@ function mdLinks(usrPath,option) {
     //espere todas las promesas
     const arrayLinks = Promise.all(arrReadFiles)
     .then((arrayAnswersFiles) => {
+        // console.log('respuesta de promesas',arrayAnswersFiles)
         return getLinks(arrayAnswersFiles) 
     })
     // .then((arrObjectLinks)=>{
@@ -28,11 +28,10 @@ function mdLinks(usrPath,option) {
     .catch((error) => {
         console.log(error)
     })
-  
     return arrayLinks
 }
 
-// mdLinks('carpetaPrueba', {validate:true})
+// mdLinks('carpetaPrueba/otraCarpeta')
 
 
 
