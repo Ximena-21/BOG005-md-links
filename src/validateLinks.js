@@ -51,7 +51,7 @@ function statsValidatelinks (links) {
     console.log( {
         Total: links.length,
         Unique: new Set(links.map((link) => link.href)).size,
-        Broken: failes,
+        Broken: failes
     })
     return {
         Total: links.length,
