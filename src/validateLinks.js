@@ -47,10 +47,11 @@ function statsLinks (links) {
 
 function statsValidatelinks (links) {
     const failes = links.filter(link => link.ok === '🚫').length
+
     console.log( {
         Total: links.length,
-        Unique: new Set(links.map((href) => href)).size,
-        Broken: failes
+        Unique: new Set(links.map((link) => link.href)).size,
+        Broken: failes,
     })
     return {
         Total: links.length,

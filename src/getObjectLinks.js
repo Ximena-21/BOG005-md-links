@@ -45,7 +45,7 @@ function getLinks(arrReadFiles) {
 
     //aplanar la mtriz^ 
     const arrObjLinksFlat = arrObjectLinks.flat(2)
-    console.log('array ded objetos de links', arrObjLinksFlat)
+    // console.log('array ded objetos de links', arrObjLinksFlat)
     return arrObjLinksFlat
 }
 

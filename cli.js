@@ -20,7 +20,7 @@ mdLinks(argv[2], argv)
         if (argv.includes('--stats') || argv.includes('--s')) {
             return statsLinks(arrObjectLinks)
         }
-    //     console.log('envia una opcion valida')
+        console.log('envia una opcion valida')
     })
     .catch((error) => {
         console.log(error)
