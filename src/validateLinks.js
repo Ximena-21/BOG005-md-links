@@ -34,11 +34,11 @@ function validateLink(matrizObjectLinks) {
 function statsLinks (links) {
     console.log({
         Total: links.length,
-        Unique: new Set(links.map((href) => href)).size
+        Unique: new Set(links.map((link) => link.href)).size
     })
     return {
         Total: links.length,
-        Unique: new Set(links.map((href) => href)).size //set coleccion de vlores unicos
+        Unique: new Set(links.map((link) => link.href)).size //set coleccion de vlores unicos
     }
 }
 

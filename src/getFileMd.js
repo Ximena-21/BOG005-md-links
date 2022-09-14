@@ -6,9 +6,12 @@ const isDir = (route) => fs.statSync(route).isDirectory()
 
 //fx retorna la ruta absoluta
 function getAbsolutePath(route) {
+
     if (path.isAbsolute(route)) {
+        console.log('la ruta es absoluta')
         return route
     }
+    console.log(path.resolve(route))
     return path.resolve(route)
 }
 
