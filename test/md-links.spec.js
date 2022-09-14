@@ -1,6 +1,6 @@
 import  { mdLinks }  from "../index.js"
 
-const path = 'carpetaPrueba/otraCarpeta'
+const path = 'unaCarpeta/otraCarpeta'
 
 describe('mdLinks', () => {
 
