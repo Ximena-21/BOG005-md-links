@@ -32,6 +32,14 @@ function getLinks(arrReadFiles) {
         const arrayObjectLink = links.map((link) => {
 
             const arrayLink = onlyRegex.exec(link)
+
+            console.log(
+                {
+                    href: arrayLink[2],
+                    text: arrayLink[1].slice(0, 50),
+                    file: pathLink
+                }
+            )
             
             return {
                 href: arrayLink[2],

@@ -21,7 +21,7 @@ function mdLinks(usrPath,option) {
     return arrayLinks
 }
 
-// mdLinks('/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otraCarpeta')
+mdLinks('/home/ximena21/programming/BOG005-md-links/unaCarpeta/otraCarpeta')
 
 
 

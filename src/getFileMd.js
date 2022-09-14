@@ -8,7 +8,7 @@ const isDir = (route) => fs.statSync(route).isDirectory()
 function getAbsolutePath(route) {
 
     if (path.isAbsolute(route)) {
-        console.log('la ruta es absoluta')
+        // console.log('la ruta es absoluta')
         return route
     }
     console.log(path.resolve(route))

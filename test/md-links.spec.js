@@ -14,12 +14,12 @@ describe('mdLinks', () => {
         {
           href: 'https://nodejs.org/es/',
           text: '[Node.js]',
-          file: '/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otraCarpeta/tercerCarpeta/pepe.md'
+          file: '/home/ximena21/programming/BOG005-md-links/unaCarpeta/otraCarpeta/tercerCarpeta/pepe.md'
         },
         {
           href: 'https://developers.google.com/v8/',
           text: '[motor de JavaScript V8 de Chrome]',
-          file: '/home/ximena21/programming/BOG005-md-links/carpetaPrueba/otraCarpeta/tercerCarpeta/pepe.md'
+          file: '/home/ximena21/programming/BOG005-md-links/unaCarpeta/otraCarpeta/tercerCarpeta/pepe.md'
         }
       ];
       expect(object).toEqual(objExpect)
