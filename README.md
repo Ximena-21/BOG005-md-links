@@ -40,6 +40,8 @@ Es una herramienta de línea de comando(CLI) y una librería, que permite extrae
 
 Para llevar a  cabo este proyecto se hizo necesario elaborar un diagrama de flujo, el cual muestra el paso a paso del paquete creado y lo que se queria obtener de él.
 
+<img src="flujograma.png" width=500 >
+
 ![image](/home/ximena21/programming/BOG005-md-links/flujograma.png)
 
 ## 4. Instalación 🛠️
@@ -55,46 +57,47 @@ luego deberas, de ejecutar el siguiente comando para que el ejecutable sea leido
 
 Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la terminal: 
 
-* md-links <path> <options>
+* *md-links <path> <options>*
 
 - options puede ser:
 
 1. Si necesitas conocer y validar los link encontrados en archivos .md:
-    * md-links <path> --validate o --v
+  * *md-links <path> --validate o --v*
 
-  *Devuelve:*
+  **Devuelve:**
 
-* {
-* `href`: URL encontrada.
-* `text`: Texto que aparecía dentro del link (`<a>`).
-* `file`: Ruta del archivo donde se encontró el link.
-* `status`: Código de respuesta HTTP.
-* `ok`: Mensaje `fail` en caso de fallo u `ok` en caso de éxito.
-* }
+*{*
+    *`href`: URL encontrada.*
+    *`text`: Texto que aparecía dentro del link (`<a>`).*
+    *`file`: Ruta del archivo donde se encontró el link.*
+    *`status`: Código de respuesta HTTP.*
+    *`ok`: Mensaje `fail` en caso de fallo u `ok` en caso de éxito.*
+ *}*
 
 2. Si necesitas conocer estadistica de cuantos link  se encontraron y cuantos son únicos:
-    * md-links <path> --stats o --s
+  * *md-links <path> --stats o --s*
 
-    *Devuelve:*
+  **Devuelve:**
 
-* Total: 3 Unique: 3
+  *Total: 3 Unique: 3*
 
 3. Si necesitas conocer, validar los link y devolver una estadisticas con los links rotos:
-    * md-links <path> --validate --stats o --v --s
+  * *md-links <path> --validate --stats o --v --s*
 
-    *Devuelve:*
-* Total: 3 Unique: 3 Broken: 1
+  **Devuelve:**
+
+  *Total: 3 Unique: 3 Broken: 1*
 
 4. si solo deseas conocer los link encontrados y donde fueron encontrados, ingresa:
-    * md-links <path> 
+  * *md-links <path>*
 
-  *Devuelve:*
+  **Devuelve:**
 
-* {
-* `href`: URL encontrada.
-* `text`: Texto que aparecía dentro del link (`<a>`).
-* `file`: Ruta del archivo donde se encontró el link.
-* }
+*{*
+    *`href`: URL encontrada.*
+    *`text`: Texto que aparecía dentro del link (`<a>`).*
+    *`file`: Ruta del archivo donde se encontró el link.*
+*}*
 
 ## 6. Tecnologias usadas 💻
 * [Node](https://nodejs.org/es/) - Utilizado para ejecutar javascript en consola
