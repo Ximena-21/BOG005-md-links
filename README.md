@@ -113,7 +113,7 @@ Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la t
 
 ## 6. Tecnologias usadas 💻
 * [Node](https://nodejs.org/es/) - Utilizado para ejecutar javascript en consola
-* [JAVASCRIPT](https://developer.mozilla.org/es/docs/Web/JavaScript) - Lenguaje de programación
+* [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript) - Lenguaje de programación
 * [GitHub](https://github.com/)- Usado guardar el repositorio del proyecto
 
 ## 7. Autor 🖋️
