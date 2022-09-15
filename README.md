@@ -42,56 +42,74 @@ Para llevar a  cabo este proyecto se hizo necesario elaborar un diagrama de fluj
 
 <img src="flujograma.png" width=700 >
 
+_Necesario `npm`_
+
+```
+npm install -g sass
+```
 
 
 ## 4. Instalación 🛠️
 
 Para hacer uso de la librería ejecuta en la terminal el siguiente comando: 
+  ```
   *npm install mdlinks-Ximena-21*
+  ```
 
 luego deberas, de ejecutar el siguiente comando para que el ejecutable sea leido
-  *npm link*
+  ```
+  npm link
+  ```
 
 
 ## 5. Guía 📝 
 
 Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la terminal: 
-
+  ```
  *md-links <path> <options>*
+ ```
 
 - options puede ser:
 
 1. Si necesitas conocer y validar los link encontrados en archivos .md:
+  ```
    *md-links <path> --validate o --v*
+   ```
 
-  **Devuelve:**
+  ***Devuelve:***
 
-*{*
-    *`href`: URL encontrada.*
-    *`text`: Texto que aparecía dentro del link (`<a>`).*
-    *`file`: Ruta del archivo donde se encontró el link.*
-    *`status`: Código de respuesta HTTP.*
-    *`ok`: Mensaje `fail` en caso de fallo u `ok` en caso de éxito.*
+*{*<br>
+    *`href`: URL encontrada.*<br>
+    *`text`: Texto que aparecía dentro del link (`<a>`).*<br>
+    *`file`: Ruta del archivo donde se encontró el link.*<br>
+    *`status`: Código de respuesta HTTP.*<br>
+    *`ok`: Mensaje `fail` en caso de fallo u `ok` en caso de éxito.*<br>
  *}*
 
 2. Si necesitas conocer estadistica de cuantos link  se encontraron y cuantos son únicos:
+  ```
    *md-links <path> --stats o --s*
+   ```
 
-  **Devuelve:**
+   ***Devuelve:***
 
   *Total: 3 Unique: 3*
 
 3. Si necesitas conocer, validar los link y devolver una estadisticas con los links rotos:
+   ```
    *md-links <path> --validate --stats o --v --s*
+   ```
 
-  **Devuelve:**
+   ***Devuelve:***
 
   *Total: 3 Unique: 3 Broken: 1*
 
 4. si solo deseas conocer los link encontrados y donde fueron encontrados, ingresa:
+   ```
    *md-links <path>*
+   ```
 
-  **Devuelve:**
+   ***Devuelve:***
 
 *{*
     *`href`: URL encontrada.*
