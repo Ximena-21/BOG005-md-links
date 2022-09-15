@@ -32,9 +32,9 @@ algunas estadísticas.
 
 Es una herramienta de línea de comando(CLI) y una librería, que permite extraer los links de un archivo tipo Markdown(md), identifica los links que esten dentro de dichos archivos, y evalua cuales están funcionando y cuales están rotos. Adicionalmente entrega esta información al usuario como estadísticas, de la siguiente información:
 
-  *Total de links* 
-  *Links únicos*
-  *Links rotos*
+  *Total de links* <br>
+  *Links únicos* <br>
+  *Links rotos* <br>
 
 ## 3. Diagrama de flujo 📊
 
@@ -42,18 +42,12 @@ Para llevar a  cabo este proyecto se hizo necesario elaborar un diagrama de fluj
 
 <img src="flujograma.png" width=700 >
 
-_Necesario `npm`_
-
-```
-npm install -g sass
-```
-
 
 ## 4. Instalación 🛠️
 
 Para hacer uso de la librería ejecuta en la terminal el siguiente comando: 
   ```
-  *npm install mdlinks-Ximena-21*
+  npm install mdlinks-Ximena-21
   ```
 
 luego deberas, de ejecutar el siguiente comando para que el ejecutable sea leido
@@ -66,14 +60,14 @@ luego deberas, de ejecutar el siguiente comando para que el ejecutable sea leido
 
 Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la terminal: 
   ```
- *md-links <path> <options>*
+ md-links <path> <options>
  ```
 
 - options puede ser:
 
 1. Si necesitas conocer y validar los link encontrados en archivos .md:
-  ```
-   *md-links <path> --validate o --v*
+   ```
+   md-links <path> --validate o --v
    ```
 
   ***Devuelve:***
@@ -87,13 +81,13 @@ Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la t
  *}*
 
 2. Si necesitas conocer estadistica de cuantos link  se encontraron y cuantos son únicos:
-  ```
-   *md-links <path> --stats o --s*
+    ```
+   md-links <path> --stats o --s
    ```
 
    ***Devuelve:***
 
-  *Total: 3 Unique: 3*
+  *Total: 3 ; Unique: 3*
 
 3. Si necesitas conocer, validar los link y devolver una estadisticas con los links rotos:
    ```
@@ -102,19 +96,19 @@ Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la t
 
    ***Devuelve:***
 
-  *Total: 3 Unique: 3 Broken: 1*
+  *Total: 3 ; Unique: 3 ; Broken: 1*
 
 4. si solo deseas conocer los link encontrados y donde fueron encontrados, ingresa:
    ```
-   *md-links <path>*
+   md-links <path>
    ```
 
    ***Devuelve:***
 
-*{*
-    *`href`: URL encontrada.*
-    *`text`: Texto que aparecía dentro del link (`<a>`).*
-    *`file`: Ruta del archivo donde se encontró el link.*
+*{*<br>
+    *`href`: URL encontrada.*<br>
+    *`text`: Texto que aparecía dentro del link (`<a>`).*<br>
+    *`file`: Ruta del archivo donde se encontró el link.*<br>
 *}*
 
 ## 6. Tecnologias usadas 💻
