@@ -65,51 +65,51 @@ Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la t
 
 - options puede ser:
 
-1. Si necesitas conocer y validar los link encontrados en archivos .md:
-   ```
-   md-links <path> --validate o --v
-   ```
-
-  ***Devuelve:***
-
-  *{*<br>
-      *`href`: URL encontrada.*<br>
-      *`text`: Texto que aparecía dentro del link (`<a>`).*<br>
-      *`file`: Ruta del archivo donde se encontró el link.*<br>
-      *`status`: Código de respuesta HTTP.*<br>
-      *`ok`: Mensaje `fail` en caso de fallo u `ok` en caso de éxito.*<br>
-  *}*
-
-2. Si necesitas conocer estadistica de cuantos link  se encontraron y cuantos son únicos:
+  1. Si necesitas conocer y validar los link encontrados en archivos .md:
     ```
-   md-links <path> --stats o --s
-   ```
+    md-links <path> --validate o --v
+    ```
 
-   ***Devuelve:***
-
-    *Total: 3 ; Unique: 3*
-
-3. Si necesitas conocer, validar los link y devolver una estadisticas con los links rotos:
-   ```
-   md-links <path> --validate --stats o --v --s
-   ```
-
-   ***Devuelve:***
-
-    *Total: 3 ; Unique: 3 ; Broken: 1*
-
-4. si solo deseas conocer los link encontrados y donde fueron encontrados, ingresa:
-   ```
-   md-links <path>
-   ```
-
-   ***Devuelve:***
+    ***Devuelve:***
 
     *{*<br>
         *`href`: URL encontrada.*<br>
         *`text`: Texto que aparecía dentro del link (`<a>`).*<br>
         *`file`: Ruta del archivo donde se encontró el link.*<br>
+        *`status`: Código de respuesta HTTP.*<br>
+        *`ok`: Mensaje `fail` en caso de fallo u `ok` en caso de éxito.*<br>
     *}*
+
+  2. Si necesitas conocer estadistica de cuantos link  se encontraron y cuantos son únicos:
+      ```
+    md-links <path> --stats o --s
+    ```
+
+    ***Devuelve:***
+
+      *Total: 3 ; Unique: 3*
+
+  3. Si necesitas conocer, validar los link y devolver una estadisticas con los links rotos:
+    ```
+    md-links <path> --validate --stats o --v --s
+    ```
+
+    ***Devuelve:***
+
+      *Total: 3 ; Unique: 3 ; Broken: 1*
+
+  4. si solo deseas conocer los link encontrados y donde fueron encontrados, ingresa:
+    ```
+    md-links <path>
+    ```
+
+    ***Devuelve:***
+
+      *{*<br>
+          *`href`: URL encontrada.*<br>
+          *`text`: Texto que aparecía dentro del link (`<a>`).*<br>
+          *`file`: Ruta del archivo donde se encontró el link.*<br>
+      *}*
 
 ## 6. Tecnologias usadas 💻
 * [Node](https://nodejs.org/es/) - Utilizado para ejecutar javascript en consola
