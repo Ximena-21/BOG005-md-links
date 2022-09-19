@@ -47,7 +47,7 @@ Para llevar a  cabo este proyecto se hizo necesario elaborar un diagrama de fluj
 
 Para hacer uso de la librería ejecuta en la terminal el siguiente comando: 
   ```
-  npm install mdlinks-Ximena-21
+  npm install md-linksPXAA21
   ```
 
 luego deberas, de ejecutar el siguiente comando para que el ejecutable sea leido
