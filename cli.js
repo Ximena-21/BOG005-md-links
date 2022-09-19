@@ -6,20 +6,32 @@ import { validateLink, statsLinks, statsValidatelinks } from "./src/validateLink
 const argv = process.argv //matriz con propiedades de la linea de comandos
 
 mdLinks(argv[2], argv)
-    .then((arrObjectLinks) => {
+.then((arrObjectLinks) => {
         if (argv.length <= 3) {
             console.log(arrObjectLinks)
             return arrObjectLinks
         }
+
         if ((argv.includes('--validate') || argv.includes('--v')) && (argv.includes('--stats') || argv.includes('--s'))) {
-            return statsValidatelinks(arrObjectLinks)
+           const validateStats = validateLink(arrObjectLinks).then((objLinksV)=>{
+                return statsValidatelinks(objLinksV)
+            })
+
+            return validateStats
         }
+
         if (argv.includes('--validate') || argv.includes('--v')) {
-            return validateLink(arrObjectLinks)
+            const validate = validateLink(arrObjectLinks).then((objLinksV)=>{
+                console.log(objLinksV)
+                return objLinksV
+            })
+           return validate
         }
+        
         if (argv.includes('--stats') || argv.includes('--s')) {
             return statsLinks(arrObjectLinks)
         }
+        
         console.log('envia una opcion valida')
     })
     .catch((error) => {

@@ -13,7 +13,7 @@ function validateLink(matrizObjectLinks) {
 
                     objectLink.status = response.status,
                     objectLink.ok = '✅'
-                    console.log('link correcto', objectLink)
+                    // console.log(objectLink)
 
                     return objectLink
 
@@ -21,15 +21,16 @@ function validateLink(matrizObjectLinks) {
 
                     objectLink.status = response.status,
                     objectLink.ok = '🚫'
-                    console.log('error link', objectLink)
+                    // console.log('error link', objectLink)
+                    // console.log(objectLink)
                     return objectLink
                 }
             })
             .catch((error) => console.log(error))
     })
+
     return Promise.all(validate)
 }
-
 
 function statsLinks (links) {
     console.log({
@@ -46,7 +47,7 @@ function statsLinks (links) {
 
 
 function statsValidatelinks (links) {
-    const failes = links.filter(link => link.ok === '🚫').length
+    const failes = links.filter(link => link.ok == '🚫').length
 
     console.log( {
         Total: links.length,
@@ -60,20 +61,6 @@ function statsValidatelinks (links) {
     }
 }
 
-//para que de una ves me trajera la estadistica pero esto toca usarlo en el CLI
-// if (option.validate === false || option.stats === false){
-//     console.log(arrObjectLinks)
-//     return arrObjectLinks
-// }
-// if (option.stats === true && option.validate === true){
-//     return statsValidatelinks(arrObjectLinks)
-// }
-// if (option.validate === true) {
-//     return validateLink(arrObjectLinks)
-// }
-// if(option.stats === true){
-//    return statsLinks(arrObjectLinks)
-// }
 
 export {
     validateLink,

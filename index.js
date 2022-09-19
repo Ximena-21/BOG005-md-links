@@ -5,7 +5,7 @@ import { readFile } from "./src/readFileMd.js"
 
 function mdLinks(usrPath,option) {
     const arrFilesMd = getFiles(usrPath)
-    
+
     if (typeof(arrFilesMd) === 'string') {
         console.log(arrFilesMd)
         return arrFilesMd
@@ -28,7 +28,7 @@ function mdLinks(usrPath,option) {
 // mdLinks('/home/ximena21/programming/Md-links/unaCarpeta')
 // mdLinks('test/testMock/carpeta')
 // mdLinks('/home/ximena21/programming/Md-links/test/testMock/mock/sinArchivos')
-mdLinks('/home/ximena21/programming/Md-links/test/testMoc')
+// mdLinks('/home/ximena21/programming/Md-links/test/testMoc')
 
 
 

@@ -11,8 +11,6 @@ function getAbsolutePath(route) {
         // console.log('la ruta es absoluta')
         return route
     }
-    console.log(path.resolve(route))
-    console.log('RUTAS ABSOLUTA',  path.resolve(route))
     return path.resolve(route)
 }
 
