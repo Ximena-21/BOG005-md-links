@@ -1,11 +1,23 @@
 import  { mdLinks }  from "../index.js"
 
-const path = 'unaCarpeta/otraCarpeta'
+const path = '/home/ximena21/programming/Md-links/test/testMock'
+const emptyPath = '/home/ximena21/programming/Md-links/test/testMock/carpeta'
+const noMdPath = '/home/ximena21/programming/Md-links/test/testMoc'
 
 describe('mdLinks', () => {
 
   it('should be a funtion', () => {
     expect(typeof mdLinks).toBe('function')
+  });
+
+  it('should return empty folder', () => {
+    const msg = mdLinks(emptyPath, {})
+    expect(msg).toBe('La carpeta esta vacia')
+  });
+
+  it('should return path no-validate', () => {
+    const msg = mdLinks(noMdPath, {})
+    expect(msg).toBe('Por favor ingrese una ruta valida')
   });
 
   it('should return object of link', done => {
@@ -14,12 +26,12 @@ describe('mdLinks', () => {
         {
           href: 'https://nodejs.org/es/',
           text: '[Node.js]',
-          file: '/home/ximena21/programming/BOG005-md-links/unaCarpeta/otraCarpeta/tercerCarpeta/pepe.md'
+          file: '/home/ximena21/programming/Md-links/test/testMock/mock/tercerCarpeta/pepe.md'
         },
         {
           href: 'https://developers.google.com/v8/',
           text: '[motor de JavaScript V8 de Chrome]',
-          file: '/home/ximena21/programming/BOG005-md-links/unaCarpeta/otraCarpeta/tercerCarpeta/pepe.md'
+          file: '/home/ximena21/programming/Md-links/test/testMock/mock/tercerCarpeta/pepe.md'
         }
       ];
       expect(object).toEqual(objExpect)
@@ -27,7 +39,3 @@ describe('mdLinks', () => {
     });
   });
 });
-
-
-//probar las otars funciones getFiles, readFile y getLinks y hacer que fallen
-  // es decir hacer un test que si ingresan un string vacion falle

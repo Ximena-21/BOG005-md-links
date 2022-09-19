@@ -12,6 +12,7 @@ function getAbsolutePath(route) {
         return route
     }
     console.log(path.resolve(route))
+    console.log('RUTAS ABSOLUTA',  path.resolve(route))
     return path.resolve(route)
 }
 
@@ -44,6 +45,7 @@ function getFiles(route) {
                 const onlyFiles = dirRead.filter((file) => {
                     return (path.extname(file) === '.md')
                 })
+
                 //convierte ruta absoluna nvos md
                 const onlyFilesWithAbsolutePath = onlyFiles.map((file) => {
                     return path.join(routeAbsolut, file)
@@ -61,12 +63,11 @@ function getFiles(route) {
                 return arrayReadDir
 
             }
-            console.log('La carpeta esta vacia')
+            return 'La carpeta esta vacia'
         }
-        console.log('La ruta no contiene archivos .md')
     }
     else {
-        console.log('Por favor ingrese una ruta valida')
+        return 'Por favor ingrese una ruta valida'
     }
 }
 
