@@ -2,53 +2,37 @@
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Diagrama de flujo](#3-diagrama-de-flujo)
-* [4. Instalación](#4-instalación)
-* [5. Guía](#5-guía)
-* [6. Tecnologias usadas](#6-tecnologías-usadas)
-* [7. Autor](#7-Autor)
+* [Resumen del proyecto](#resumen-del-proyecto)
+* [Diagrama de flujo](#diagrama-de-flujo)
+* [Instalación](#instalación)
+* [Guía](#guía)
+* [Tecnologias usadas](#tecnologías-usadas)
+* [Autor](#Autor)
 ***
-
-## 1. Preámbulo 👀
-
-[Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
-ligero muy popular entre developers. Es usado en muchísimas plataformas que
-manejan texto plano (GitHub, foros, blogs, ...) y es muy común
-encontrar varios archivos en ese formato en cualquier tipo de repositorio
-(empezando por el tradicional `README.md`).
-
-Estos archivos `Markdown` normalmente contienen _links_ (vínculos/ligas) que
-muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de
-la información que se quiere compartir.
-
-Dentro de una comunidad de código abierto, nos han propuesto crear una
-herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
-en formato `Markdown`, para verificar los links que contengan y reportar
-algunas estadísticas.
 
 ## 2. Resumen del proyecto 📄
 
-Es una herramienta de línea de comando(CLI) y una librería, que permite extraer los links de un archivo tipo Markdown(md), identifica los links que esten dentro de dichos archivos, y evalua cuales están funcionando y cuales están rotos. Adicionalmente entrega esta información al usuario como estadísticas, de la siguiente información:
+MdLinks es una herramienta de línea de comando(CLI) y una librería, que permite extraer los links de un archivo tipo Markdown(md), identifica los links que esten dentro de dichos archivos, y evalua cuales están funcionando y cuales están rotos. Adicionalmente entrega esta información al usuario como estadísticas, de la siguiente información:
 
   *Total de links* <br>
   *Links únicos* <br>
   *Links rotos* <br>
 
-## 3. Diagrama de flujo 📊
+## Diagrama de flujo 📊
 
-Para llevar a  cabo este proyecto se hizo necesario elaborar un diagrama de flujo, el cual muestra el paso a paso del paquete creado y lo que se queria obtener de él.
+Diagrama de flujo, del paso a paso del paquete creado y lo que se queria obtener de él.
 
 <img src="flujograma.png" width=700 >
 
 
-## 4. Instalación 🛠️
+## Instalación 🛠️
 
 Para hacer uso de la librería ejecuta en la terminal el siguiente comando: 
+
   ```
   npm install md-linksPXAA21
   ```
+  **Si tiene problemas con el anterior comando, ejecutelo pasandole la ruta de donde quedo clonado el proyecto Md-links**
 
 luego deberas, de ejecutar el siguiente comando para que el ejecutable sea leido
   ```
@@ -56,7 +40,7 @@ luego deberas, de ejecutar el siguiente comando para que el ejecutable sea leido
   ```
 
 
-## 5. Guía 📝 
+## Guía 📝 
 
 Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la terminal: 
   ```
@@ -111,10 +95,10 @@ Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la t
         *`file`: Ruta del archivo donde se encontró el link.*<br>
     *}*
 
-## 6. Tecnologias usadas 💻
+## Tecnologias usadas 💻
 * [Node](https://nodejs.org/es/) - Utilizado para ejecutar javascript en consola
 * [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript) - Lenguaje de programación
 * [GitHub](https://github.com/)- Usado guardar el repositorio del proyecto
 
 ## 7. Autor 🖋️
-* **Paula Ximena Anzola** - [Ximena-21](https://github.com/Ximena-21) 
+* **Paula Ximena Anzola** - *Ingeniera ambiental / Frontend Developer* - [Ximena-21](https://github.com/Ximena-21) 
