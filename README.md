@@ -10,7 +10,7 @@
 * [Autor](#Autor)
 ***
 
-## 2. Resumen del proyecto 📄
+## Resumen del proyecto 📄
 
 MdLinks es una herramienta de línea de comando(CLI) y una librería, que permite extraer los links de un archivo tipo Markdown(md), identifica los links que esten dentro de dichos archivos, y evalua cuales están funcionando y cuales están rotos. Adicionalmente entrega esta información al usuario como estadísticas, de la siguiente información:
 
@@ -101,4 +101,4 @@ Para utilizar esta librería puedes ejecutar los siguientes comandos, desde la t
 * [GitHub](https://github.com/)- Usado guardar el repositorio del proyecto
 
 ## 7. Autor 🖋️
-* **Paula Ximena Anzola** - *Ingeniera ambiental / Frontend Developer* - [Ximena-21](https://github.com/Ximena-21) 
+* **Paula Ximena Anzola** - *Ingeniera ambiental / Frontend Developer* - [Proyectos](https://github.com/Ximena-21) 
